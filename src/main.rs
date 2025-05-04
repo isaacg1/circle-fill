@@ -56,7 +56,8 @@ fn make_image(
     };
     'outer: while misses < timeout {
         if GIF {
-            let perc = (100.0 * placed.len() as f64 / size.pow(2) as f64) as u64;
+            let num_frames = 50;
+            let perc = (num_frames as f64 * placed.len() as f64 / size.pow(2) as f64) as u64;
             if perc > cur_perc {
                 cur_perc = perc;
                 let mut writeable: Vec<u8> = grid
